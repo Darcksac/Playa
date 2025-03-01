@@ -57,6 +57,7 @@ header {
 .carrusel-img {
     width: 100%;
     display: none;
+    border-radius: 20px;
 }
 
 /* Tarjetas de información */
@@ -72,8 +73,8 @@ header {
     background: white;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: 300px;
-    border-radius: 10px;
+    width: 200px;
+    border-radius: 100px;
     text-align: center;
     transition: transform 0.3s;
 }
@@ -113,3 +114,31 @@ header {
     font-size: 20px;
     cursor: pointer;
 }
+.btn-mapa {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #007bff; /* Fondo azul */
+    color: white; /* Texto blanco */
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px; /* Bordes redondeados */
+    text-decoration: none; /* Eliminar subrayado */
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Efecto de transición */
+  }
+  
+  .btn-mapa:hover {
+    background-color: #0056b3; /* Cambio de color al pasar el mouse */
+    transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+  }
+  
+  .btn-mapa:active {
+    background-color: #004085; /* Fondo más oscuro al hacer clic */
+    transform: scale(1); /* Vuelve al tamaño normal al hacer clic */
+  }
+  
+  .btn-mapa:focus {
+    outline: none; /* Eliminar contorno de enfoque */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.6); /* Agregar sombra al enfocar */
+  }
+  
