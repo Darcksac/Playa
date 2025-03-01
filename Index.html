@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escápate a la Playa - Viaje Todo Incluido</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1 class="titulo">¡Vive la Experiencia Perfecta en la Playa!</h1>
+            <p class="subtitulo">Un viaje todo incluido para que solo disfrutes y te relajes.</p>
+            <button class="btn-reserva" onclick="enviarWhatsApp()">Reserva Ahora</button>
+        </div>
+    </header>
+    
+    <section class="carrusel">
+        <div class="imagenes">
+            <img src="playa/1.jpg" class="carrusel-img">
+            <img src="playa/2.jpg" class="carrusel-img">
+            <img src="playa/3.jpg" class="carrusel-img">
+            <img src="playa/4.jpg" class="carrusel-img">
+            <img src="playa/5.jpg" class="carrusel-img">
+            <img src="playa/6.jpg" class="carrusel-img">
+            <img src="playa/7.jpg" class="carrusel-img">
+            <img src="playa/8.jpg" class="carrusel-img">
+
+        </div>
+    </section>
+
+    <section class="destacados">
+        <div class="card">
+            <h2>De 0-2 años</h2>
+            <p>$800</p>
+            <p>Solo si requieren asiento</p>
+        </div>
+        <div class="card">
+            <h2>De 2-5 años</h2>
+            <p>$810 o $1610</p>
+            <p>Primer precio sin asiento</p>
+        </div>
+        <div class="card">
+            <h2>De 6-11 años</h2>
+            <p>$2925</p>
+            <p>TODO INCLUIDO</p>
+        </div>
+      <div class="card">
+            <h2>Adulto</h2>
+            <p>$5850</p>
+            <p>TODO INCLUIDO</p>
+        </div>
+    </section>
+    
+    <div id="popup" class="popup">
+        <div class="popup-contenido">
+            <span class="cerrar" onclick="cerrarPopup()">&times;</span>
+            <h2>Reserva tu Viaje</h2>
+            <p>Llena el formulario y nos pondremos en contacto contigo.</p>
+            <form>
+                <input type="text" placeholder="Nombre" required>
+                <input type="email" placeholder="Correo Electrónico" required>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+        let index = 0;
+        function cambiarImagen() {
+            const imagenes = document.querySelectorAll('.carrusel-img');
+            imagenes.forEach((img, i) => {
+                img.style.display = i === index ? 'block' : 'none';
+            });
+            index = (index + 1) % imagenes.length;
+        }
+        setInterval(cambiarImagen, 3000);
+        cambiarImagen();
+    </script>
+    
+    <style>
+        .carrusel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            height: 300px;
+        }
+
+        .imagenes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+
+        .carrusel-img {
+            width: 60%;
+            height: auto;
+            display: none;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .carrusel-img {
+                width: 80%;
+            }
+        }
+    </style>
+</body>
+</html>
